@@ -8,5 +8,20 @@
 
 <body>
   <h1>#(title)</h1>
+  <form method="post" action="/todos">
+  <input name="title"/>
+  <button role="submit">Create</button>
+  </form>
+  <ul>
+    #for(todo in todos):
+    <li>
+      #if(todo.completed):
+        <input type="checkbox" checked/>#(todo.id), #(todo.title)
+      #else:
+        <input type="checkbox" />#(todo.id), #(todo.title)
+      #endif
+        </li>
+    #endfor
+  </ul>
 </body>
 </html>
